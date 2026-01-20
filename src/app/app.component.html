@@ -1,3 +1,19 @@
+<!-- Alerta Customizado -->
+<div class="custom-alert" [class.show]="showAlert" [class.error]="alertType === 'error'" [class.success]="alertType === 'success'">
+  <div class="alert-content">
+    <div class="alert-icon">
+      @if (alertType === 'error') {
+        <span>⚠️</span>
+      }
+      @if (alertType === 'success') {
+        <span>✓</span>
+      }
+    </div>
+    <div class="alert-message">{{ alertMessage }}</div>
+    <button class="alert-close" (click)="hideAlert()">×</button>
+  </div>
+</div>
+
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-content">
@@ -225,10 +241,12 @@
           </div>
           
           <div class="contact-item">
-            <div class="contact-icon">📱</div>
+            <div class="contact-icon whatsapp-icon">
+              <img src="assets/wpp.png" alt="WhatsApp" class="whatsapp-logo">
+            </div>
             <div>
-              <h4>Telefone</h4>
-              <p>11 983270236</p>
+              <h4>WhatsApp</h4>
+              <p>(11) 98327-0236</p>
             </div>
           </div>
         </div>
@@ -246,12 +264,12 @@
         </div>
         
         <div class="form-group">
-          <label for="telefone">Telefone</label>
-          <input type="tel" id="telefone" name="telefone" [(ngModel)]="formData.telefone" required placeholder="(11) 99999-9999">
+          <label for="telefone">Celular</label>
+          <input type="tel" id="telefone" name="telefone" [(ngModel)]="formData.telefone" (input)="formatPhone($event)" required placeholder="(11) 99999-9999" maxlength="15">
         </div>
         
         <div class="form-group">
-          <label for="mensagem">Mensagem</label>
+          <label for="mensagem">Mensagem <span class="required-asterisk">*</span></label>
           <textarea id="mensagem" name="mensagem" [(ngModel)]="formData.mensagem" rows="5" required placeholder="Conte-nos sobre sua ótica e como podemos ajudar..."></textarea>
         </div>
         

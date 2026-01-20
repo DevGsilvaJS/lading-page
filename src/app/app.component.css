@@ -458,6 +458,25 @@
 .contact-icon {
   font-size: 1.5rem;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.whatsapp-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(37, 211, 102, 0.3));
 }
 
 .contact-item h4 {
@@ -487,6 +506,11 @@
   margin-bottom: 0.5rem;
   font-weight: 600;
   color: var(--text-dark);
+}
+
+.required-asterisk {
+  color: #ef4444;
+  margin-left: 2px;
 }
 
 .form-group input,
@@ -681,6 +705,112 @@
     min-height: 80px;
     padding: 1.5rem 1rem;
     font-size: 1rem;
+  }
+}
+
+/* Custom Alert */
+.custom-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  min-width: 320px;
+  max-width: 500px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateX(400px);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  pointer-events: none;
+}
+
+.custom-alert.show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.custom-alert.error {
+  border-left: 4px solid #ef4444;
+}
+
+.custom-alert.success {
+  border-left: 4px solid #10b981;
+}
+
+.alert-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.alert-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.custom-alert.success .alert-icon {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.alert-message {
+  flex: 1;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.alert-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.alert-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-dark);
+}
+
+@media (max-width: 640px) {
+  .custom-alert {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    min-width: auto;
+    max-width: none;
+  }
+
+  .custom-alert.show {
+    transform: translateY(0);
+  }
+
+  .alert-content {
+    padding: 1rem 1.25rem;
+  }
+
+  .alert-message {
+    font-size: 0.875rem;
   }
 }
 

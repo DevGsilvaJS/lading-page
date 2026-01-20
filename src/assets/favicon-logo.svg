@@ -1,0 +1,23 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle for favicon -->
+  <rect width="200" height="200" fill="#667eea" rx="20"/>
+  
+  <!-- Network pattern - simplified for favicon -->
+  <g opacity="0.6">
+    <!-- Central dots -->
+    <circle cx="100" cy="100" r="2.5" fill="white"/>
+    <circle cx="100" cy="75" r="2" fill="white" opacity="0.8"/>
+    <circle cx="100" cy="125" r="2" fill="white" opacity="0.8"/>
+    <circle cx="75" cy="100" r="2" fill="white" opacity="0.8"/>
+    <circle cx="125" cy="100" r="2" fill="white" opacity="0.8"/>
+    
+    <!-- Connecting lines -->
+    <line x1="100" y1="100" x2="100" y2="75" stroke="white" stroke-width="1.2" opacity="0.5"/>
+    <line x1="100" y1="100" x2="100" y2="125" stroke="white" stroke-width="1.2" opacity="0.5"/>
+    <line x1="100" y1="100" x2="75" y2="100" stroke="white" stroke-width="1.2" opacity="0.5"/>
+    <line x1="100" y1="100" x2="125" y2="100" stroke="white" stroke-width="1.2" opacity="0.5"/>
+  </g>
+  
+  <!-- GA Text for favicon - larger and bolder -->
+  <text x="100" y="135" font-family="Arial, sans-serif" font-size="70" font-weight="900" fill="white" text-anchor="middle" dominant-baseline="middle" letter-spacing="-2">GA</text>
+</svg>
